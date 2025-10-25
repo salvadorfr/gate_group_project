@@ -10,7 +10,7 @@ function Home() {
 
   return (
     <div className="home-layout">
-      <Sidebar items={menuItems} header="Panel Principal" />
+      <Sidebar items={menuItems}/>
       <main className="home-content">
         <h1>Bienvenido a la vista Home</h1>
         <p>Selecciona una opción en el menú lateral.</p>

@@ -3,7 +3,6 @@ import "./sidebar.css";
 
 export default function Sidebar({
   items = [],
-  header = "Menú",
   defaultOpen = false,
 }) {
   const [open, setOpen] = useState(defaultOpen); // cerrado por defecto
@@ -18,13 +17,26 @@ export default function Sidebar({
         aria-hidden={!open}
       >
         <div className="sidebar__header">
-          <span>{header}</span>
+          <div style={{ fontSize: "2rem", lineHeight: 1.2 }}>
+            <span style={{ fontWeight: "bold" }}>gate</span>group
+            <div
+              style={{
+                fontSize: "1rem",
+                fontWeight: "normal",
+                color: "#b7c0d1",
+                padding: "0.7rem 0rem",}}
+            >
+              Pick and pack
+            </div>
+          </div>
+
+
           <button
             className="sidebar__close"
             onClick={() => setOpen(v => !v)}
             aria-label="Cerrar menú"
           >
-            {open ? "x" : "☰"}
+            {open ? "☰" : "☰"}
           </button>
         </div>
 
