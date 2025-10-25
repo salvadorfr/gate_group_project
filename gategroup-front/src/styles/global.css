@@ -1,0 +1,154 @@
+/* =====================================================================
+   🌐 Gate Group – Estilos globales mínimos
+   ---------------------------------------------------------------------
+   - Define la paleta, tipografía, tamaños y comportamiento base
+   - No impone layouts ni componentes
+   - Todo lo adicional (componentes, views) puede tener su propio CSS
+   ===================================================================== */
+
+/* =========================
+   🎨 Variables globales
+   ========================= */
+:root {
+  /* Colores base */
+  --color-bg: #0b0e2f;
+  --color-surface: #131642;
+  --color-text: #e6e9ef;
+  --color-text-dim: #b7c0d1;
+  --color-primary: #60a5fa;
+  --color-secondary: #34d399;
+  --color-danger: #ef4444;
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  /* Tipografía */
+  --font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+
+  /* Bordes y sombras suaves */
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   🧩 Reset básico
+   ========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   🧾 Tipografía general
+   ========================= */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+  color: var(--color-text-dim);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* =========================
+   🎛️ Formularios
+   ========================= */
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
+}
+
+button {
+  cursor: pointer;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: var(--color-secondary);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* =========================
+   📦 Otros elementos
+   ========================= */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 1.5rem 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* =========================
+   🌓 Soporte modo oscuro del sistema
+   ========================= */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f7f9fc;
+    --color-surface: #ffffff;
+    --color-text: #1a1b26;
+    --color-text-dim: #4b5563;
+    --color-border: rgba(0, 0, 0, 0.1);
+  }
+}

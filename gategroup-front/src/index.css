@@ -1,3 +1,15 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 *{
     font-family: sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana;
 }
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> Stashed changes
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> Stashed changes
