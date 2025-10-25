@@ -16,7 +16,7 @@
   --color-text: #e6e9ef;
   --color-text-dim: #b7c0d1;
   --color-primary: #60a5fa;
-  --color-secondary: #34d399;
+
   --color-danger: #ef4444;
   --color-border: rgba(255, 255, 255, 0.1);
 
@@ -151,4 +151,10 @@ ul {
     --color-text-dim: #4b5563;
     --color-border: rgba(0, 0, 0, 0.1);
   }
+}
+
+.home-content{
+  margin-left: var(--handle-w);
+  transition: margin-left var(--speed) ease;
+  padding: 1rem;
 }

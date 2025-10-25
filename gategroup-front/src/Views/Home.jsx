@@ -3,13 +3,13 @@ import Sidebar from "../componentes/SideBar";
 
 function Home() {
   const menuItems = [
-    { key: "inicio", label: "Inicio", href: "#", active: true },
-    { key: "reportes", label: "Reportes", href: "#reportes" },
-    { key: "config", label: "Configuración", href: "#config" },
+    { key: "inventory", label: "Inventory", href: "#", active: true },
+    { key: "orders", label: "Orders", href: "#reportes" },
+    { key: "leftovers", label: "Leftovers", href: "#config" },
   ];
 
   return (
-    <div className="home-container">
+    <div className="home-layout">
       <Sidebar items={menuItems} header="Panel Principal" />
       <main className="home-content">
         <h1>Bienvenido a la vista Home</h1>

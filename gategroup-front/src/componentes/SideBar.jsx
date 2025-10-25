@@ -10,7 +10,7 @@ export default function Sidebar({
 
   return (
     <>
-    {open && <div className="sidebar__overlay" onClick={() => setOpen(false)} />}
+        {open && <div className="sidebar__overlay" onClick={() => setOpen(false)} />}
 
       {/* Panel lateral */}
       <aside
@@ -33,12 +33,10 @@ export default function Sidebar({
             <a
               key={item.key ?? item.href ?? item.label}
               href={item.href ?? "#"}
-              className={`sidebar__link ${item.active ? "is-active" : ""}`}
+              className={`sidebar__link ${item.active ? "is-active" : ""}${open ? "" : "is-open"}`}
               onClick={item.onClick}
             >
-              {item.icon && <span className="sidebar__icon">{item.icon}</span>}
               <span>{item.label}</span>
-              {item.badge && <span className="sidebar__badge">{item.badge}</span>}
             </a>
           ))}
         </nav>
