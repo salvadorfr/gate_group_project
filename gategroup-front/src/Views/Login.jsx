@@ -24,6 +24,7 @@ export default function Login() {
           <label className="label" htmlFor="user">Usuario</label>
           <input
             id="user"
+            type="email"
             className="input"
             placeholder="tu@empresa.com"
             autoComplete="username"
