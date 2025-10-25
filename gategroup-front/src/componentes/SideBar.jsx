@@ -6,31 +6,11 @@ export default function Sidebar({
   header = "Menú",
   defaultOpen = false,
 }) {
-  const [open, setOpen] = useState(!!defaultOpen); // cerrado por defecto
-
-  // Cerrar con Escape
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  const [open, setOpen] = useState(defaultOpen); // cerrado por defecto
 
   return (
     <>
-      {/* Botón hamburguesa (siempre por encima del overlay) */}
-      <button
-        className={`sidebar__toggle ${open ? "is-active" : ""}`}
-        aria-label={open ? "Cerrar menú" : "Abrir menú"}
-        aria-expanded={open}
-        onClick={() => setOpen(v => !v)}
-      >
-        ☰
-      </button>
-
-      {/* Overlay: solo cuando está abierto; clic cierra */}
-      {open && <div className="sidebar__overlay" onClick={() => setOpen(false)} />}
+    {open && <div className="sidebar__overlay" onClick={() => setOpen(false)} />}
 
       {/* Panel lateral */}
       <aside
@@ -41,10 +21,10 @@ export default function Sidebar({
           <span>{header}</span>
           <button
             className="sidebar__close"
-            onClick={() => setOpen(false)}
+            onClick={() => setOpen(v => !v)}
             aria-label="Cerrar menú"
           >
-            ×
+            {open ? "x" : "☰"}
           </button>
         </div>
 
