@@ -1,19 +1,38 @@
 import React from "react";
 import Sidebar from "../componentes/SideBar";
+import { Routes, Route, Navigate } from "react-router-dom";
+
+function HomeWelcome() {
+  return (
+    <>
+      <h1>Bienvenido a la vista Home</h1>
+      <p>Selecciona una opción en el menú lateral.</p>
+    </>
+  );
+}
+function Inventory() { return <h2>Inventory Inventory Inventory</h2>; }
+function Orders() { return <h2>Orders Orders Orders Orders</h2>; }
+function Leftovers() { return <h2>Leftovers Leftovers Leftovers</h2>; }
 
 function Home() {
-  const menuItems = [
-    { key: "inventory", label: "Inventory", href: "#", active: true },
-    { key: "orders", label: "Orders", href: "#reportes" },
-    { key: "leftovers", label: "Leftovers", href: "#config" },
+  const menuItems = [ 
+    { key: "inventory", label: "Inventory", to: "inventory" },
+    { key: "orders",    label: "Orders",    to: "orders" },
+    { key: "leftovers", label: "Leftovers", to: "leftovers" },
   ];
 
   return (
     <div className="home-layout">
-      <Sidebar items={menuItems} header="Panel Principal" />
+      <Sidebar items={menuItems}/>  
       <main className="home-content">
-        <h1>Bienvenido a la vista Home</h1>
-        <p>Selecciona una opción en el menú lateral.</p>
+        <Routes>
+          <Route index element={<HomeWelcome />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/leftovers" element={<Leftovers />} />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
     </div>
   );
