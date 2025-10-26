@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "../componentes/SideBar";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Orders from "./Orders";
 
 function HomeWelcome() {
   return (
@@ -11,7 +12,6 @@ function HomeWelcome() {
   );
 }
 function Inventory() { return <h2>Inventory Inventory Inventory</h2>; }
-function Orders() { return <h2>Orders Orders Orders Orders</h2>; }
 function Leftovers() { return <h2>Leftovers Leftovers Leftovers</h2>; }
 
 function Home() {
